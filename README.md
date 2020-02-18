@@ -42,3 +42,48 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Sources
+
+https://bit.dev/components
+
+Typescript
+https://github.com/Microsoft/TypeScript-React-Starter
+https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#basic-cheatsheet-table-of-contents
+
+Hooks
+https://reactjs.org/docs/hooks-reference.html#usestate
+
+Redux + Hooks
+https://react-redux.js.org/next/api/hooks#useselector
+
+
+## Project structure patterns
+/src
+    index.tsx
+    index.css
+    /components
+        /ComponentX
+            ComponentX.tsx
+            ComponentX.css
+    /containers
+        ComponentX
+    /types
+        index.tsx
+    /constants
+        index.tsx
+    /store
+        index.tsx
+        /actions
+            index.tsx
+        /reducers
+            index.tsx
+
+
+## Todo next
+1. Implement a Hello World example (Counter) including REDUX and HOOKS. 
+2. Implement window widht (https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889)
+3. Implement KONVA to draw a line
+4. Store drawn lines in Redux-store
+5. Implement REDUX-SAGA to discretize lines (take every 10th point) and sent to server;
+    Add a random timeout to simulate connection problems. 
