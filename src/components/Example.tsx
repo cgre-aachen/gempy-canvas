@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+
+// https://thoughtbot.com/blog/using-redux-with-react-hooks
 
 function Example() {
-  // state
-  // Types via Type inference;
+  // state variable, initialized to 0
   const [count, setCount] = React.useState(0);
 
   // side effects (data fetching, subscriptions, or manually changing the DOM)
@@ -13,8 +14,8 @@ function Example() {
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Add</button>
     </div>
   );
 }
