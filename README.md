@@ -57,33 +57,39 @@ https://reactjs.org/docs/hooks-reference.html#usestate
 Redux + Hooks
 https://react-redux.js.org/next/api/hooks#useselector
 
-
 ## Project structure patterns
-/src
-    index.tsx
-    index.css
-    /components
-        /ComponentX
-            ComponentX.tsx
-            ComponentX.css
-    /containers
-        ComponentX
-    /types
-        index.tsx
-    /constants
-        index.tsx
-    /store
-        index.tsx
-        /actions
-            index.tsx
-        /reducers
-            index.tsx
 
+/src
+&nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; index.css
+&nbsp; &nbsp; /components
+&nbsp; &nbsp; &nbsp; &nbsp; /ComponentX
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ComponentX.tsx
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ComponentX.css
+&nbsp; &nbsp; /containers
+&nbsp; &nbsp; &nbsp; &nbsp; ComponentX
+&nbsp; &nbsp; /types
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /constants
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /store
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /actions
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /reducers
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+
+## Notes on practice
+
+Strongly inspired by "React+TypeScript Cheatsheets"
+Function Components are written as normal functions;
+Hooks: useState: Types via Type inference;
 
 ## Todo next
-1. Implement a Hello World example (Counter) including REDUX and HOOKS. 
+
+1. Implement a Hello World example (Counter) including REDUX and HOOKS.
 2. Implement window widht (https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889)
 3. Implement KONVA to draw a line
 4. Store drawn lines in Redux-store
 5. Implement REDUX-SAGA to discretize lines (take every 10th point) and sent to server;
-    Add a random timeout to simulate connection problems. 
+   Add a random timeout to simulate connection problems.
