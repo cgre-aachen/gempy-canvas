@@ -1,6 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App/App";
-import './index.css';
+import { Provider } from "react-redux";
+import App from "./components/App";
+import { store } from "./store"
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// https://codersera.com/blog/react-redux-hooks-with-typescript/
+// https://react-redux.js.org/next/api/hooks#using-hooks-in-a-react-redux-app
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
