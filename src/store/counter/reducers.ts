@@ -3,7 +3,7 @@ import {
   CounterActionTypes,
   INCREMENT_COUNTER,
   DECREMENT_COUNTER
-} from "../types/counter";
+} from "./types";
 
 const initialState: CounterState = {
   counter: 0

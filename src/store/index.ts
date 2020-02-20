@@ -1,8 +1,25 @@
-import { counterReducer } from "./reducers/counter";
-import { combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunkMiddleware from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-export const rootReducer = combineReducers({
-  counter: counterReducer
+import { chatReducer } from "./chat/reducers";
+import { counterReducer } from "./counter/reducers";
+
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  chat: chatReducer
 });
 
-export type RootState = ReturnType<typeof rootReducer>;
+export type AppState = ReturnType<typeof rootReducer>;
+
+export default function configureStore() {
+  const middlewares = [thunkMiddleware];
+  const middleWareEnhancer = applyMiddleware(...middlewares);
+
+  const store = createStore(
+    rootReducer,
+    composeWithDevTools(middleWareEnhancer)
+  );
+
+  return store;
+}

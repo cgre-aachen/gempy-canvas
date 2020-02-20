@@ -2,7 +2,7 @@ import {
   INCREMENT_COUNTER,
   DECREMENT_COUNTER,
   CounterActionTypes
-} from "../types/counter";
+} from "./types";
 
 // TypeScript infers that this function is returning IncrementCounter
 export function incrementCounter(): CounterActionTypes {
