@@ -3,11 +3,11 @@ import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { chatReducer } from "./chat/reducers";
-import { counterReducer } from "./counter/reducers";
+import { pointsReducer } from "./points/reducers";
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
-  chat: chatReducer
+  chat: chatReducer,
+  points: pointsReducer
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
