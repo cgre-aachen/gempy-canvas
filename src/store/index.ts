@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   points: pointsReducer
 });
 
-export type AppState = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof rootReducer>;
 
 export default function configureStore() {
   const middlewares = [thunkMiddleware];

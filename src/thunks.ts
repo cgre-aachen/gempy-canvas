@@ -1,11 +1,11 @@
 import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { sendMessage } from "./store/chat/actions";
-import { AppState } from "./store";
+import { RootState } from "./store";
 
 export const thunkSendMessage = (
   message: string
-): ThunkAction<void, AppState, null, Action<string>> => async dispatch => {
+): ThunkAction<void, RootState, null, Action<string>> => async dispatch => {
   const asyncResp = await exampleAPI();
   dispatch(
     sendMessage({

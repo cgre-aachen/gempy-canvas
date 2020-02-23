@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { AppState } from "../store";
+import { RootState } from "../store";
 
 import { ChatState } from "../store/chat/types";
 import { PointsState } from "../store/points/types";
@@ -12,17 +12,15 @@ import { thunkSendMessage } from "../thunks";
 
 // https://thoughtbot.com/blog/using-redux-with-react-hooks
 
-interface AppProps {
-  // messages
+interface StoreProps {
   sendMessage: typeof sendMessage;
   chat: ChatState;
   thunkSendMessage: any;
-  // points
   points: PointsState;
   addPoint: typeof addPoint;
 }
 
-class Example extends React.Component<AppProps> {
+class Example extends React.Component<StoreProps> {
   state = {
     message: ""
   };
@@ -55,14 +53,14 @@ class Example extends React.Component<AppProps> {
   render() {
     const messages = this.props.chat;
     const points = this.props.points;
-    console.log(points);
-    console.log(messages);
+    // console.log(points);
+    // console.log(messages);
 
     return <div className="parent">Hello World</div>;
   }
 }
 
-const mapStateToProps = (state: AppState) => ({
+const mapStateToProps = (state: RootState) => ({
   chat: state.chat,
   points: state.points
 });
