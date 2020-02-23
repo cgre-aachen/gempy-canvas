@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Example from "./Example";
-import { ExampleHooks } from "./ExampleHooks.jsx";
+import { ExampleHooks } from "./ExampleHooks";
 
 function App() {
   console.log("App running ...");

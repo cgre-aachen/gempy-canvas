@@ -1,13 +1,16 @@
 import React from "react";
+import { RootState } from "../store";
 import { useDispatch, useSelector } from "react-redux";
 import { addPoint } from "../store/points/actions";
+import { Point } from "../store/points/types";
 
 export const ExampleHooks = () => {
-  const points = useSelector(state => state.points);
+  const pointsState = (state: RootState) => state.points;
+  const points = useSelector(pointsState);
   console.log(points);
 
   const dispatch = useDispatch();
-  const newPoint = {
+  const newPoint: Point = {
     x: 21,
     y: 21,
     z: 21,
