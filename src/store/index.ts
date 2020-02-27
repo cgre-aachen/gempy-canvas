@@ -4,10 +4,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { chatReducer } from "./chat/reducers";
 import { pointsReducer } from "./points/reducers";
+import { counterReducer } from "./counter/reducers";
 
 const rootReducer = combineReducers({
   chat: chatReducer,
-  points: pointsReducer
+  points: pointsReducer,
+  counter: counterReducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

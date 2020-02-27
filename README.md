@@ -87,9 +87,8 @@ Hooks: useState: Types via Type inference;
 
 ## Todo next
 
-1. Implement a Hello World example (Counter) including REDUX and HOOKS.
-2. Implement window widht (https://medium.com/@dan_abramov/making-sense-of-react-hooks-fdbde8803889)
-3. Implement KONVA to draw a line
-4. Store drawn lines in Redux-store
-5. Implement REDUX-SAGA to discretize lines (take every 10th point) and sent to server;
-   Add a random timeout to simulate connection problems.
+1. Counter
+2. Redux-Saga
+3. Konva
+4. Konva to store
+5. Connect to Backend
