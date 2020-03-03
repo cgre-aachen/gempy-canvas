@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
  * Google maps component;
  */
 
-export function SketchBoard() {
+export default function SketchBoard() {
   // keep current window width in local state;
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -20,8 +20,7 @@ export function SketchBoard() {
 
   return (
     <div className="SketchBoard">
-      <p>Sketchboard</p>
-      <p>Window width is: {width}</p>
+      <p>Placeholde: Sketchboard</p>
     </div>
   );
 }

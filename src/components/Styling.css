@@ -1,0 +1,51 @@
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.Row1 {
+  background-color: black;
+  color: white;
+  height: 100%;
+  flex: 1;  
+}
+
+.Row5 {
+  background-color: blue;
+  color: white;
+  margin-bottom: auto;   
+}
+
+.container-col {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  height: 100%;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+  background-color: green;
+  height: 100%;
+}
+
+.Topbar {
+  background-color: #282c34;
+  color: white;
+  height: 100%;
+}
+
+.SideBar {
+  background-color: black;
+  color: white;
+  width: 100%;
+  flex: 1;
+}
+
+.SketchBoard {
+  background-color: blue;
+  color: white;
+  width: 100%;
+  flex: 4;
+}
