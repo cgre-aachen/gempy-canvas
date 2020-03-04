@@ -3,11 +3,16 @@ import { useDispatch } from "react-redux";
 
 import AppBarComp from "./AppBarComp";
 import { updateWindowSize } from "../store/windowSize/actions";
+import SideBar from "./SideBar";
+import SketchBoard from "./SketchBoard";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 
+// Listens to window resizes and updates the windoSize property of the store.
+// This property is then read by other components as needed by Konva and
+// for calculation purposes;
 function useWindowSize() {
   const [size, setSize] = useState([0, 0]);
   const dispatch = useDispatch();
@@ -32,6 +37,7 @@ function useWindowSize() {
 function App() {
   const [width, height] = useWindowSize();
 
+  // Size is assigned dynamically with a dependency on store;
   const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1
@@ -58,8 +64,12 @@ function App() {
     <div className={classes.root}>
       <AppBarComp />
       <Grid container spacing={1}>
-        <Paper className={classes.paper0}>200px</Paper>
-        <Paper className={classes.paper1}>xs=9</Paper>
+        <Paper className={classes.paper0}>
+          <SideBar />
+        </Paper>
+        <Paper className={classes.paper1}>
+          <SketchBoard />
+        </Paper>
       </Grid>
     </div>
   );

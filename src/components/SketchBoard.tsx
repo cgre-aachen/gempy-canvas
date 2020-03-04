@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
+import { Stage, Layer, Rect } from "react-konva";
 
 /* Sketchboard component;
  * Wraps Canvas and Canvas-Sidepanel components;
@@ -6,21 +9,20 @@ import React, { useState, useEffect } from "react";
  */
 
 export default function SketchBoard() {
-  // keep current window width in local state;
-  const [width, setWidth] = useState(window.innerWidth);
+  const windowSizeState = (state: RootState) => state.windowSize.size;
+  const windowSize = useSelector(windowSizeState);
 
-  // Use a side effect to set that state when window resizes;
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+  console.log(windowSize);
 
   return (
-    <div className="SketchBoard">
-      <p>Placeholde: Sketchboard</p>
-    </div>
+    <Stage width={windowSize.width - 250} height={windowSize.height - 90}>
+      <Layer>
+        <Rect
+          width={windowSize.width - 250}
+          height={windowSize.height - 90}
+          fill="rgb(51,51,51)"
+        />
+      </Layer>
+    </Stage>
   );
 }
