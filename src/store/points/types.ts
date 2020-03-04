@@ -1,3 +1,5 @@
+export const ADD_POINT = "ADD_POINT";
+
 export interface Point {
   x: number;
   y: number;
@@ -8,8 +10,6 @@ export interface Point {
 export interface PointsState {
   points: Point[];
 }
-
-export const ADD_POINT = "ADD_POINT";
 
 interface AddPointAction {
   type: typeof ADD_POINT;
