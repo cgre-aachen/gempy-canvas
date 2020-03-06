@@ -10,6 +10,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 
+import { getSanityCheck } from "./../api/index";
+
 /* src/components/App.tsx
  * Following index.tsx (entry point) as main platform of the app. It includes
  * Navigation, routing and a function to extract the window size on change as
@@ -68,6 +70,8 @@ function App() {
   }));
 
   const classes = useStyles();
+
+  getSanityCheck();
 
   return (
     <div className={classes.root}>
