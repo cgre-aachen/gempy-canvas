@@ -12,8 +12,6 @@ export default function SketchBoard() {
   const windowSizeState = (state: RootState) => state.windowSize.size;
   const windowSize = useSelector(windowSizeState);
 
-  console.log(windowSize);
-
   return (
     <Stage width={windowSize.width - 250} height={windowSize.height - 90}>
       <Layer>

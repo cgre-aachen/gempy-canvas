@@ -2,17 +2,26 @@ import React, { useState, useLayoutEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import AppBarComp from "./AppBarComp";
-import { updateWindowSize } from "../store/windowSize/actions";
 import SideBar from "./SideBar";
 import SketchBoard from "./SketchBoard";
+import { updateWindowSize } from "../store/windowSize/actions";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 
-// Listens to window resizes and updates the windoSize property of the store.
-// This property is then read by other components as needed by Konva and
-// for calculation purposes;
+/* src/components/App.tsx
+ * Following index.tsx (entry point) as main platform of the app. It includes
+ * Navigation, routing and a function to extract the window size on change as
+ * it is needed by Konva and the Backend.
+ *
+ * useWindowSize()
+ * dynamically gets the windowssize and stores it in the redux-store. The
+ * functin includes material-ui's makeStyles() as width and hight of the
+ * components have to be consitent over alle compoenents and with the ones in
+ * the store.
+ */
+
 function useWindowSize() {
   const [size, setSize] = useState([0, 0]);
   const dispatch = useDispatch();

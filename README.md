@@ -87,8 +87,5 @@ Hooks: useState: Types via Type inference;
 
 ## Todo next
 
-1. Counter
-2. Redux-Saga
-3. Konva
-4. Konva to store
-5. Connect to Backend
+1. Redux-Saga
+2. Connect to Backend => Get section in right resolution
