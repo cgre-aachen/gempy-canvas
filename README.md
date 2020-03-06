@@ -42,3 +42,50 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Sources
+
+https://bit.dev/components
+
+Typescript
+https://github.com/Microsoft/TypeScript-React-Starter
+https://github.com/typescript-cheatsheets/react-typescript-cheatsheet#basic-cheatsheet-table-of-contents
+
+Hooks
+https://reactjs.org/docs/hooks-reference.html#usestate
+
+Redux + Hooks
+https://react-redux.js.org/next/api/hooks#useselector
+
+## Project structure patterns
+
+/src
+&nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; index.css
+&nbsp; &nbsp; /components
+&nbsp; &nbsp; &nbsp; &nbsp; /ComponentX
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ComponentX.tsx
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ComponentX.css
+&nbsp; &nbsp; /containers
+&nbsp; &nbsp; &nbsp; &nbsp; ComponentX
+&nbsp; &nbsp; /types
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /constants
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /store
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /actions
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+&nbsp; &nbsp; /reducers
+&nbsp; &nbsp; &nbsp; &nbsp; index.tsx
+
+## Notes on practice
+
+Strongly inspired by "React+TypeScript Cheatsheets"
+Function Components are written as normal functions;
+Hooks: useState: Types via Type inference;
+
+## Todo next
+
+1. Redux-Saga
+2. Connect to Backend => Get section in right resolution
