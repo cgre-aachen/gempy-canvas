@@ -4,12 +4,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 import { pointsReducer } from "./points/reducers";
 import { counterReducer } from "./counter/reducers";
-import { windowSizeReducer } from "./windowSize/reducers";
+import { gpmodConfigReducers } from "./gpmodConfig/reducers";
 
 const rootReducer = combineReducers({
   points: pointsReducer,
   counter: counterReducer,
-  windowSize: windowSizeReducer
+  gpmodConfig: gpmodConfigReducers
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

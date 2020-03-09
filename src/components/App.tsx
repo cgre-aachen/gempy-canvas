@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 import AppBarComp from "./AppBarComp";
 import SideBar from "./SideBar";
 import SketchBoard from "./SketchBoard";
-import { updateWindowSize } from "../store/windowSize/actions";
+
+import { updateWindowSize } from "../store/gpmodConfig/actions";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
