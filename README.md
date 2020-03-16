@@ -87,5 +87,9 @@ Hooks: useState: Types via Type inference;
 
 ## Todo next
 
-1. Redux-Saga
-2. Connect to Backend => Get section in right resolution
+1. Get config from backend and test if response.data follows defined json-schemas;
+2. Set new gpmod-resolution, sketchboard-resolution and gpmod-extent;
+3. Setup a default model;
+4. Create a section;
+5. Get IMG from Backend and use as background layer on sketchboard; OR
+   Get a surface polygons as mentioned by Elisa;
