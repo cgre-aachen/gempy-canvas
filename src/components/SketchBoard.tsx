@@ -9,15 +9,16 @@ import { Stage, Layer, Rect } from "react-konva";
  */
 
 export default function SketchBoard() {
-  const windowSizeState = (state: RootState) => state.windowSize.size;
-  const windowSize = useSelector(windowSizeState);
+  const sketchboardSizeState = (state: RootState) =>
+    state.gpmodConfig.sketchboardSize;
+  const sketchboardSize = useSelector(sketchboardSizeState);
 
   return (
-    <Stage width={windowSize.width - 250} height={windowSize.height - 90}>
+    <Stage width={sketchboardSize.width} height={sketchboardSize.height}>
       <Layer>
         <Rect
-          width={windowSize.width - 250}
-          height={windowSize.height - 90}
+          width={sketchboardSize.width}
+          height={sketchboardSize.height}
           fill="rgb(51,51,51)"
         />
       </Layer>

@@ -1,27 +1,34 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
+import createSagaMiddleware from "redux-saga";
+// import { logger } from "redux-logger";
 
+// redux-reducers
 import { pointsReducer } from "./points/reducers";
 import { counterReducer } from "./counter/reducers";
-import { windowSizeReducer } from "./windowSize/reducers";
+import { gpmodConfigReducers } from "./gpmodConfig/reducers";
 
+// middleware
+import rootSaga from "../sagas";
+
+// combine reducers
 const rootReducer = combineReducers({
   points: pointsReducer,
   counter: counterReducer,
-  windowSize: windowSizeReducer
+  gpmodConfig: gpmodConfigReducers
 });
 
+// export type of RootState
 export type RootState = ReturnType<typeof rootReducer>;
 
-export default function configureStore() {
-  const middlewares = [thunkMiddleware];
-  const middleWareEnhancer = applyMiddleware(...middlewares);
+// create middelwares
+const sagaMiddleware = createSagaMiddleware();
 
-  const store = createStore(
-    rootReducer,
-    composeWithDevTools(middleWareEnhancer)
-  );
+// configure and create store
+export const store = createStore(
+  rootReducer,
+  applyMiddleware(sagaMiddleware)
+  // applyMiddleware(sagaMiddleware logger)
+);
 
-  return store;
-}
+// start saga
+sagaMiddleware.run(rootSaga);
